@@ -1,0 +1,42 @@
+#text_example_four {
+    background-color: black;
+
+    .home {
+        position: relative;
+
+        :global {
+            .container {
+                max-width: 1920px;
+            }
+        }
+
+        .custom_row {
+            display: flex;
+
+            .col_left {
+                width: 25%;
+                margin: 4rem 0;
+
+                h2 {
+                    position: sticky;
+                    top: 50vh;
+                    font-size: 25px;
+                    color: rgba(white, 0.6);
+                }
+            }
+        }
+    }
+
+    .item {
+        position: relative;
+        z-index: 1;
+
+        h3 {
+            font-size: 200px;
+            line-height: 1;
+            white-space: nowrap;
+            color: white;
+            text-transform: uppercase;
+        }
+    }
+}

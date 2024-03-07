@@ -1,0 +1,200 @@
+#card_example_two {
+
+    .section {
+        min-height: 300vh;
+        background-color: white;
+        overflow-x: clip;
+
+        .in {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+        }
+
+        h2 {
+            font-size: 12rem;
+            text-align: center;
+            text-transform: lowercase;
+            letter-spacing: 0.2rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            max-width: 100%;
+
+            @media (max-width: 1479px) {
+                font-size: 10rem;
+            }
+
+            @media (max-width: 1399px) {
+                font-size: 8rem;
+            }
+
+            @media (max-width: 1199px) {
+                font-size: 6rem;
+            }
+
+            @media (max-width: 991px) {
+                font-size: 5rem;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 4rem;
+            }
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+
+            li {
+                width: 100%;
+                max-width: 60rem;
+                height: 60rem;
+                aspect-ratio: 1;
+
+                &:not(:first-child) {
+                    position: absolute;
+                }
+
+                @media (max-height: 767px) or (max-width: 991px) {
+                    height: 50rem;
+                    max-width: 50rem;
+                }
+
+                @media (max-height: 619px) or (max-width: 767px) {
+                    height: 40rem;
+                    max-width: 40rem;
+                }
+
+                @media (max-height: 499px) or (max-width: 499px) {
+                    height: 30rem;
+                    max-width: 30rem;
+                }
+
+                @media (max-height: 379px) or (max-width: 399px) {
+                    height: 26rem;
+                    max-width: 26rem;
+                }
+
+
+                .card_design {
+                    height: 100%;
+                    padding: 8rem;
+                    display: flex;
+                    flex-direction: column;
+                    border-radius: 2rem;
+
+                    @media (max-height: 767px) or (max-width: 991px) {
+                        padding: 6rem;
+                    }
+
+                    @media (max-height: 619px) or (max-width: 767px) {
+                        padding: 4rem;
+                    }
+
+                    @media (max-height: 499px) or (max-width: 499px) {
+                        padding: 3.6rem;
+                    }
+
+                    @media (max-height: 379px) or (max-width: 399px) {
+                        padding: 3rem;
+                    }
+
+                    svg {
+                        width: 12rem;
+                        height: auto;
+
+                        @media (max-height: 767px) or (max-width: 991px) {
+                            width: 10rem;
+                        }
+
+                        @media (max-height: 619px) or (max-width: 767px) {
+                            width: 8rem;
+                        }
+
+                        @media (max-height: 499px) or (max-width: 499px) {
+                            width: 6rem;
+                        }
+
+                        path {
+                            stroke: white;
+                        }
+                    }
+
+                    p {
+                        margin-top: auto;
+                        font-size: 3.6rem;
+
+                        @media (max-height: 767px) or (max-width: 991px) {
+                            font-size: 3rem;
+                        }
+
+                        @media (max-height: 619px) or (max-width: 767px) {
+                            font-size: 2.4rem;
+                        }
+
+                        @media (max-height: 499px) or (max-width: 499px) {
+                            font-size: 2rem;
+                        }
+
+                        @media (max-height: 379px) or (max-width: 399px) {
+                            font-size: 1.8rem;
+                        }
+                    }
+                }
+
+                &:first-child {
+                    z-index: 4;
+
+                    .card_design {
+                        background-color: #304756;
+                        color: #2BABE2;
+                    }
+                }
+
+                &:nth-child(2) {
+                    z-index: 3;
+
+                    .card_design {
+                        background-color: #2BABE2;
+                        color: #FFE300;
+                    }
+                }
+
+                &:nth-child(3) {
+                    z-index: 2;
+
+                    .card_design {
+                        background-color: #66C3A2;
+                        color: #304756;
+                    }
+                }
+
+                &:last-child {
+                    z-index: 1;
+
+                    .card_design {
+                        background-color: #FFE300;
+                        color: #304756;
+
+                        svg {
+                            path {
+                                stroke: #304756;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

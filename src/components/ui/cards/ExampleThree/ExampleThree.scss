@@ -1,0 +1,59 @@
+$box: rgba(220, 229, 229, .7);
+
+#card_example_three {
+    .who_we_are {
+        overflow-x: clip;
+
+        :global {
+            .container {
+                max-width: 1600px;
+            }
+        }
+    }
+
+    .card_example_three_grid {
+        margin-top: 10rem;
+        display: flex;
+        flex-wrap: wrap;
+
+
+        .card_example_three_item {
+            width: 50%;
+            padding: 1.5rem;
+
+            @media (max-width: 575px) {
+                width: 100%;
+            }
+
+            &:nth-child(even) {
+                .card_example_three_item_box {
+                    margin-top: 12rem;
+                    margin-bottom: -12rem;
+
+                    @media (max-width: 575px) {
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .card_example_three_item_box {
+        height: 100%;
+        background-color: $box;
+        text-transform: lowercase;
+        padding: 5.4rem;
+        border-radius: 4rem;
+
+        h2 {
+            font-size: 12rem;
+            margin-bottom: 8rem;
+        }
+
+        p {
+            font-size: 3rem;
+            text-align: right;
+
+        }
+    }
+}

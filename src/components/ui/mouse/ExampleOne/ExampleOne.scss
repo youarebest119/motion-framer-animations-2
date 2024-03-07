@@ -1,0 +1,17 @@
+#mouse_example_one {
+
+    .cursor {
+        height: 1rem;
+        width: 1rem;
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        z-index: 9988;
+        pointer-events: none;
+        // mask-position: 20px 20px;
+        // mask-image: url('../../../Assets/Images/Icons/mask-cursor.svg');
+        // mask-repeat: no-repeat;
+        background-color: black;
+    }
+}

@@ -1,0 +1,48 @@
+.prerequisiites {
+    position: fixed !important;
+    top: 5.8rem;
+    left: 0.8rem;
+    z-index: 1000;
+    width: fit-content;
+
+    >.dropdown-toggle {
+        background-color: white !important;
+        border: none;
+        padding: 0.8rem;
+        border-radius: 1rem;
+        outline: none;
+        color: #3F4144 !important;
+        font-size: 1.6rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+
+    >.dropdown-menu {
+        background-color: white;
+        border: none;
+        padding: 0.8rem;
+        border-radius: 1rem;
+        width: 15rem;
+
+        ul {
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 0.8rem;
+                }
+
+                a {
+                    color: #3F4144;
+                    opacity: 0.8;
+                    font-size: 1.4rem;
+                    display: block;
+                    width: 100%;
+                    font-weight: 400;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}

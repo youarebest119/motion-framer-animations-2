@@ -1,0 +1,13 @@
+@import "../../../assets/theme/_var.scss";
+
+.dummy_text {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+        line-height: 2;
+        padding: 2rem;
+    }
+}

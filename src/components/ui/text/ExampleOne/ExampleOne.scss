@@ -1,0 +1,31 @@
+#text_example_one {
+    .heading {
+        font-size: 140px;
+        line-height: 1.6;
+        font-weight: 900;
+        margin-inline: auto;
+        width: fit-content;
+        text-transform: uppercase;
+    }
+
+    .animate {
+        font-size: inherit;
+        font-weight: inherit;
+        color: inherit;
+        line-height: inherit;
+        position: relative;
+        color: #DCE1E1;
+        margin-inline: auto;
+        width: fit-content;
+
+        .animate_clip {
+            width: 100%;
+            position: absolute;
+            color: #3F4144;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+        }
+    }
+}

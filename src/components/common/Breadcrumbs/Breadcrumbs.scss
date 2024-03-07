@@ -1,0 +1,46 @@
+@import "../../../assets/theme/_var.scss";
+
+.custom_breadcrumbs {
+    position: fixed;
+    top: 0.8rem;
+    left: 0.8rem;
+    z-index: 1000;
+    background-color: white;
+    padding: 0.8rem;
+    border-radius: 1rem;
+
+    ul {
+        display: flex;
+        overflow-y: clip;
+        position: relative;
+        align-items: center;
+
+        li {
+            width: fit-content;
+
+            &:not(:last-child) {
+                margin-right: 0.8rem;
+
+                &::after {
+                    padding-left: 0.8rem;
+                    content: "/";
+                }
+            }
+
+            a {
+                text-transform: capitalize;
+                color: #3F4144;
+                font-size: 1.6rem;
+                font-weight: 500;
+                white-space: nowrap;
+            }
+
+            &:last-child {
+                a {
+                    pointer-events: none;
+                    color: rgba(#3F4144, 0.6);
+                }
+            }
+        }
+    }
+}

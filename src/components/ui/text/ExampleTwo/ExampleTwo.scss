@@ -1,0 +1,13 @@
+#text_example_two {
+    .heading {
+        font-size: 30px;
+        line-height: 2;
+        letter-spacing: 1px;
+    }
+
+    .letter_by_letter {
+        >div {
+            display: inline-block;
+        }
+    }
+}
