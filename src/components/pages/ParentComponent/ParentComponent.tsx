@@ -7,14 +7,14 @@ import { GridIcon, SearchIcon } from "../../../assets/icons/icons";
 
 const ParentComponent = () => {
     const { parentId } = useParams();
-    const component = COMPONENTS.filter(item => item.id === parentId)[0];
+    const component = COMPONENTS.filter(item => item.id === parentId)[0] || {};
 
     const [viewType, setViewType] = useState("GRID");
     const [data, setData] = useState(component.childrens);
     const [search, setSearch] = useState("");
     useEffect(() => {
         setData(
-            component.childrens.filter(item => item.title.toLowerCase().includes(search.toLowerCase()) || item.description?.toLowerCase().includes(search.toLowerCase()))
+            component.childrens && component.childrens.filter(item => item.title.toLowerCase().includes(search.toLowerCase()) || item.description?.toLowerCase().includes(search.toLowerCase()))
         )
     }, [search])
 
@@ -41,18 +41,21 @@ const ParentComponent = () => {
                 <Row>
                     {
                         data &&
-                        data.map(item => {
-                            return (
-                                <Col md={4} key={item.id}>
-                                    <Card
-                                        title={item.title}
-                                        description={item.description}
-                                        to={`/${parentId}/${item.id}`}
-                                        preview={item.preview}
-                                    />
-                                </Col>
-                            )
-                        })
+                            data.length > 0 ?
+                            data.map(item => {
+                                return (
+                                    <Col md={4} key={item.id}>
+                                        <Card
+                                            title={item.title}
+                                            description={item.description}
+                                            to={`/${parentId}/${item.id}`}
+                                            preview={item.preview}
+                                        />
+                                    </Col>
+                                )
+                            })
+                            :
+                            "Nothing Found"
                     }
                 </Row>
             </Container>

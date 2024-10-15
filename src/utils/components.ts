@@ -3,8 +3,10 @@ import { SidebarExampleOne } from "../components/ui/sidebars";
 import { PREVIEWS } from "../assets/images/previews";
 import { TextExampleFour, TextExampleOne, TextExampleThree, TextExampleTwo } from "../components/ui/text";
 import { ModalExampleOne } from "../components/ui/modals";
-import { CardExampleFour, CardExampleOne, CardExampleThree, CardExampleTwo } from "../components/ui/cards";
+import { CardExampleFive, CardExampleFour, CardExampleOne, CardExampleThree, CardExampleTwo } from "../components/ui/cards";
 import { MouseExampleOne, MouseExampleTwo } from "../components/ui/mouse";
+import { HeaderExampleOne, HeaderExampleTwo } from "../components/ui/headers";
+import { ScrollExampleOne, ScrollExampleTwo } from "../components/ui/scroll";
 
 interface component {
     id: string,
@@ -22,7 +24,7 @@ interface component {
         createdOn: string,
         prerequisites: {
             packages?: {
-                name: ("framer-motion" | "sass" | "react-router-dom" | "bootstrap" | "react-bootstrap"),
+                name: ("framer-motion" | "sass" | "react-router-dom" | "bootstrap" | "react-bootstrap" | "react-hot-toast" | "lottie-react"),
                 link?: string,
             }[],
             css?: string[],
@@ -43,7 +45,7 @@ export const COMPONENTS: component[] = [
                 preview: PREVIEWS.SIDEBAR.EXAMPLE_ONE,
                 videoPreview: "",
                 title: "Example 1",
-                description: "",
+                description: "full screen sidebar for desktop size with one toggle button and a sidebar",
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
@@ -78,7 +80,44 @@ export const COMPONENTS: component[] = [
     {
         id: "headers",
         title: "Headers",
-        childrens: [],
+        childrens: [
+            {
+                id: "example-1",
+                component: HeaderExampleOne,
+                title: "Example One",
+                preview: PREVIEWS.HEADER.EXAMPLE_ONE,
+                description: "header with left logo and right side navbar and action buttons with toggle button in responsive",
+                createdOn: "Thu Mar 08 2024 15:13:19 GMT+0530 (India Standard Time)",
+                prerequisites: {
+                    packages: [
+                        { name: "sass", },
+                        { name: "framer-motion", },
+                        { name: "react-router-dom", },
+                        { name: "react-bootstrap", },
+                    ],
+                    others: [],
+                    media: [],
+                }
+            },
+            {
+                id: "example-2",
+                component: HeaderExampleTwo,
+                preview: PREVIEWS.HEADER.EXAMPLE_TWO,
+                title: "Example Two",
+                description: "header with left logo , centered navbar and right size action buttons with toggle button in responsive",
+                createdOn: "Thu Mar 08 2024 15:13:19 GMT+0530 (India Standard Time)",
+                prerequisites: {
+                    packages: [
+                        { name: "sass", },
+                        { name: "framer-motion", },
+                        { name: "react-router-dom", },
+                        { name: "react-bootstrap", },
+                    ],
+                    others: [],
+                    media: [],
+                }
+            },
+        ],
     },
     {
         id: "buttons",
@@ -94,11 +133,11 @@ export const COMPONENTS: component[] = [
                 component: CardExampleOne,
                 title: "Example One",
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
+                preview: PREVIEWS.CARDS.EXAMPLE_ONE,
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", }
                     ],
                     others: [],
                     media: [],
@@ -107,13 +146,13 @@ export const COMPONENTS: component[] = [
             {
                 id: "example-2",
                 component: CardExampleTwo,
+                preview: PREVIEWS.CARDS.EXAMPLE_TWO,
                 title: "Example Two",
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", }
                     ],
                     others: [],
                     media: [],
@@ -123,12 +162,13 @@ export const COMPONENTS: component[] = [
                 id: "example-3",
                 component: CardExampleThree,
                 title: "Example Three",
+                preview: PREVIEWS.CARDS.EXAMPLE_THREE,
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "react-bootstrap", },
+                        { name: "framer-motion" },
                     ],
                     others: [],
                     media: [],
@@ -137,13 +177,32 @@ export const COMPONENTS: component[] = [
             {
                 id: "example-4",
                 component: CardExampleFour,
+                preview: PREVIEWS.CARDS.EXAMPLE_FOUR,
                 title: "Example Four",
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "react-hot-toast" },
+                        { name: "react-router-dom" },
+                        { name: "framer-motion" },
+                        { name: "lottie-react" },
+                    ],
+                    others: [],
+                    media: [],
+                }
+            },
+            {
+                id: "example-5",
+                component: CardExampleFive,
+                // preview: PREVIEWS.CARDS.EXAMPLE_FOUR,
+                title: "Example Five",
+                createdOn: "Thu Mar 08 2024 15:13:19 GMT+0530 (India Standard Time)",
+                prerequisites: {
+                    packages: [
+                        { name: "sass", },
+                        { name: "react-bootstrap" },
+                        { name: "framer-motion" },
                     ],
                     others: [],
                     media: [],
@@ -169,12 +228,14 @@ export const COMPONENTS: component[] = [
                 id: "example-1",
                 component: ModalExampleOne,
                 title: "Example One",
+                preview: PREVIEWS.MODALS.EXAMPLE_ONE,
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "react-hot-toast", },
+                        { name: "react-bootstrap", },
+                        { name: "framer-motion", },
                     ],
                     others: [],
                     media: [],
@@ -191,11 +252,11 @@ export const COMPONENTS: component[] = [
                 component: MouseExampleOne,
                 title: "Example One",
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
+                description: "custom cursor ",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", },
                     ],
                     others: [],
                     media: [],
@@ -208,9 +269,8 @@ export const COMPONENTS: component[] = [
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", },
                     ],
                     others: [],
                     media: [],
@@ -226,7 +286,36 @@ export const COMPONENTS: component[] = [
     {
         id: "scroll",
         title: "Scroll",
-        childrens: [],
+        childrens: [
+            {
+                id: "example-1",
+                component: ScrollExampleOne,
+                title: "Example One",
+                createdOn: "Thu Mar 18 2024 15:13:19 GMT+0530 (India Standard Time)",
+                prerequisites: {
+                    packages: [
+                        { name: "sass", },
+                        { name: "framer-motion", },
+                    ],
+                    others: [],
+                    media: [],
+                }
+            },
+            {
+                id: "example-2",
+                component: ScrollExampleTwo,
+                title: "Example Two",
+                createdOn: "Thu Mar 27 2024 15:13:19 GMT+0530 (India Standard Time)",
+                prerequisites: {
+                    packages: [
+                        { name: "sass", },
+                        { name: "framer-motion", },
+                    ],
+                    others: [],
+                    media: [],
+                }
+            },
+        ],
     },
     {
         id: "sliders",
@@ -254,9 +343,8 @@ export const COMPONENTS: component[] = [
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", },
                     ],
                     others: [],
                     media: [],
@@ -269,9 +357,9 @@ export const COMPONENTS: component[] = [
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", },
+                        { name: "react-bootstrap", },
                     ],
                     others: [],
                     media: [],
@@ -284,9 +372,8 @@ export const COMPONENTS: component[] = [
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", },
                     ],
                     others: [],
                     media: [],
@@ -299,9 +386,9 @@ export const COMPONENTS: component[] = [
                 createdOn: "Thu Mar 07 2024 15:13:19 GMT+0530 (India Standard Time)",
                 prerequisites: {
                     packages: [
-                        {
-                            name: "sass",
-                        }
+                        { name: "sass", },
+                        { name: "framer-motion", },
+                        { name: "react-bootstrap" },
                     ],
                     others: [],
                     media: [],

@@ -1,8 +1,29 @@
 #text_example_three {
+    overflow: clip;
+
     .text {
         font-size: 140px;
         text-align: center;
         text-transform: uppercase;
         font-weight: 600;
+        width: fit-content;
+        margin-inline: auto;
+
+        @media (max-width: 1479px) {
+            font-size: 10rem;
+        }
+
+        @media (max-width: 1199px) {
+            font-size: 8rem;
+        }
+
+        @media (max-width: 767px) {
+            font-size: 6rem;
+        }
+
+        @media (max-width: 575px) {
+            font-size: 4rem;
+        }
+
     }
 }

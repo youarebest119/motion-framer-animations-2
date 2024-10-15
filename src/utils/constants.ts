@@ -15,9 +15,3 @@ export const ROUTES = {
     PAGE_TRANSITION: "/page-transitions",
     CLICKABLE_IMAGE: "/clickable-image",
 }
-
-export const SPRING = {
-    stiffness: 100,
-    damping: 40,
-    restDelta: 0.001,
-};

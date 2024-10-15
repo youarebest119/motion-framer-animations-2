@@ -1,7 +1,6 @@
 import "./ExampleThree.scss";
 import { m, useScroll, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { SPRING } from "../../../../utils/constants";
 import DummyText from "../../../common/DummyText/DummyText";
 
 interface propTypes {
@@ -12,6 +11,12 @@ interface propTypes {
 }
 
 const Animate = (props: propTypes) => {
+    const SPRING = {
+        stiffness: 100,
+        damping: 40,
+        restDelta: 0.001,
+    };
+
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,

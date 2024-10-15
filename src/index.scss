@@ -69,6 +69,11 @@ html.lenis {
   pointer-events: none;
 }
 
+.container,
+.container-fluid {
+  padding: 0 1rem;
+}
+
 .row {
   margin: -1rem;
 

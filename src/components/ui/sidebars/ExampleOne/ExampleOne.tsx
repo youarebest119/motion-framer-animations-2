@@ -86,13 +86,11 @@ const ExampleOne = () => {
             scale: 0,
             x: "50%",
             y: "-50%",
-            // transform: "translate(50%, -50%)",
         },
         open: {
-            scale: 3,
+            scale: 3.2,
             x: "50%",
             y: "-50%",
-            // transform: "translate(50%, -50%)",
         }
     };
 

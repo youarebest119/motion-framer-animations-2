@@ -55,7 +55,7 @@ const ExampleFour = () => {
             <div id="text_example_four" className={"main"}>
                 <div style={{ height: "200vh" }} />
                 <section className={"home"}>
-                    <Container>
+                    <Container fluid="md">
                         <div className={"custom_row"}>
                             <div className={"col_left"}>
                                 <h2>[Features]</h2>

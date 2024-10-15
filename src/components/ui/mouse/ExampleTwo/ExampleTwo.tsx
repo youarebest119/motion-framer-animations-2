@@ -1,12 +1,12 @@
-import { useSpring, m, MotionValue } from "framer-motion";
-import "./ExampleTwo.scss";
+import { MotionValue, m, useSpring } from "framer-motion";
 import { MouseEvent } from "react";
 import wallpaper1 from "../../../../assets/images/mouse/example-two/wallpaper-1.jpg";
 import wallpaper11 from "../../../../assets/images/mouse/example-two/wallpaper-11.jpg";
 import wallpaper2 from "../../../../assets/images/mouse/example-two/wallpaper-2.jpg";
-import wallpaper22 from "../../../../assets/images/mouse/example-two/wallpaper22.jpg";
 import wallpaper3 from "../../../../assets/images/mouse/example-two/wallpaper-3.jpg";
+import wallpaper22 from "../../../../assets/images/mouse/example-two/wallpaper22.jpg";
 import wallpaper33 from "../../../../assets/images/mouse/example-two/wallpaper33.jpg";
+import "./ExampleTwo.scss";
 
 
 const projects = [

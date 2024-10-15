@@ -1,0 +1,207 @@
+#header_example_two {
+    .header {
+        padding: 1.6rem 0;
+        border-bottom: 1px solid #3f414412;
+        background-color: #3f414412;
+
+        .header_in {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .header_logo {
+                display: flex;
+                align-items: center;
+                max-width: 10rem;
+            }
+
+            .header_nav {
+                ul {
+                    display: flex;
+                    align-items: center;
+                    margin-inline: -2rem;
+
+                    >li {
+                        padding-inline: 2rem;
+
+                        a {
+                            font-size: 1.4rem;
+                            font-weight: 500;
+                            position: relative;
+                            color: #3f4144;
+
+                            &::before {
+                                pointer-events: none;
+                                content: "";
+                                width: 0%;
+                                right: 0;
+                                position: absolute;
+                                bottom: 0;
+                                height: 2px;
+                                background-color: #3f4144;
+                                transition: 300ms ease-in-out;
+                            }
+
+                            &:hover,
+                            &.active {
+                                &::before {
+                                    width: 100%;
+                                    left: 0;
+                                    right: unset;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 991px) {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    max-width: 40rem;
+                    height: 100dvh;
+                    background-color: #3f4144;
+                    z-index: 100;
+                    padding: 3.3rem 2rem;
+                    transform: translateX(-100%);
+                    overflow: auto;
+
+                    ul {
+                        display: block;
+                        margin: 6rem 0 0;
+
+                        li {
+                            padding: 0;
+
+                            &:not(:last-child) {
+                                margin-bottom: 3rem;
+                            }
+
+                            a {
+                                font-size: 2.4rem;
+                                line-height: 2;
+                                color: white;
+                                width: 100%;
+
+                                &::before {
+                                    background-color: white;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 575px) {
+                    ul {
+                        li {
+                            a {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .header_content {
+                display: flex;
+                align-items: center;
+
+                .header_action {
+                    display: flex;
+                    align-items: center;
+
+                    >button {
+                        &:not(:first-child) {
+                            margin-left: 0.8rem;
+                        }
+                    }
+
+                    .action_btn {
+                        width: 10rem;
+                        height: 4rem;
+                        border-radius: 2rem;
+                        outline: none;
+                        background-color: #3f4144;
+                        color: white;
+                        font-size: 1.4rem;
+                        letter-spacing: 0.1rem;
+                        border: 2px solid #3f4144;
+                        transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+                        &.secondary_btn {
+                            background-color: transparent;
+                            color: #3f4144;
+
+                            &:hover {
+                                background-color: #3f4144;
+                                color: white;
+                            }
+                        }
+                    }
+
+                    .header_toggle {
+                        padding: 0;
+                        margin: 0;
+                        background-color: transparent;
+                        border: none;
+                        outline: none;
+                        z-index: 101;
+
+                        span {
+                            width: 3.2rem;
+                            display: block;
+                            height: 0.3rem;
+                            background-color: #3f4144;
+                            transform-origin: left;
+                            transition: 300ms ease-in-out;
+
+                            &:not(:last-child) {
+                                margin-bottom: 0.85rem;
+                            }
+                        }
+
+                        &.active {
+                            span {
+
+                                @media (max-width: 449px) {
+                                    background-color: white;
+                                }
+
+                                &:nth-child(2) {
+                                    opacity: 0;
+                                }
+
+                                &:first-child {
+                                    transform: rotate(45deg)
+                                }
+
+                                &:last-child {
+                                    transform: rotate(-45deg)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header_backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(1rem);
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms ease-in-out;
+    z-index: 99;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}

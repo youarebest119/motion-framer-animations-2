@@ -15,6 +15,10 @@
         }
 
         h2 {
+            @media (min-width: 576px) {
+                white-space: nowrap;
+            }
+
             font-size: 12rem;
             text-align: center;
             text-transform: lowercase;
@@ -23,8 +27,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 100%;
-            max-width: 100%;
+            // width: 100%;
+            // max-width: 100%;
+            z-index: -1;
 
             @media (max-width: 1479px) {
                 font-size: 10rem;
@@ -57,35 +62,11 @@
             padding: 0;
 
             li {
-                width: 100%;
-                max-width: 60rem;
-                height: 60rem;
-                aspect-ratio: 1;
+                width: fit-content;
 
                 &:not(:first-child) {
                     position: absolute;
                 }
-
-                @media (max-height: 767px) or (max-width: 991px) {
-                    height: 50rem;
-                    max-width: 50rem;
-                }
-
-                @media (max-height: 619px) or (max-width: 767px) {
-                    height: 40rem;
-                    max-width: 40rem;
-                }
-
-                @media (max-height: 499px) or (max-width: 499px) {
-                    height: 30rem;
-                    max-width: 30rem;
-                }
-
-                @media (max-height: 379px) or (max-width: 399px) {
-                    height: 26rem;
-                    max-width: 26rem;
-                }
-
 
                 .card_design {
                     height: 100%;
@@ -93,20 +74,31 @@
                     display: flex;
                     flex-direction: column;
                     border-radius: 2rem;
+                    max-width: 60rem;
+                    width: 100%;
+                    height: 60rem;
 
                     @media (max-height: 767px) or (max-width: 991px) {
+                        height: 50rem;
+                        max-width: 50rem;
                         padding: 6rem;
                     }
 
                     @media (max-height: 619px) or (max-width: 767px) {
+                        height: 40rem;
+                        max-width: 40rem;
                         padding: 4rem;
                     }
 
                     @media (max-height: 499px) or (max-width: 499px) {
+                        height: 30rem;
+                        max-width: 30rem;
                         padding: 3.6rem;
                     }
 
                     @media (max-height: 379px) or (max-width: 399px) {
+                        height: 26rem;
+                        max-width: 26rem;
                         padding: 3rem;
                     }
 

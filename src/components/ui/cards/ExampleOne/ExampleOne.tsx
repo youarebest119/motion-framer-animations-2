@@ -1,7 +1,6 @@
 import { MouseEvent, useEffect } from "react";
 import "./ExampleOne.scss";
 import { stagger, m, useAnimate } from "framer-motion";
-import { getCoords } from "../../../../utils/utils";
 import gallery1 from "../../../../assets/images/cards/example-one/image1.jpeg";
 import gallery2 from "../../../../assets/images/cards/example-one/image2.jpeg";
 import gallery3 from "../../../../assets/images/cards/example-one/image3.jpeg";
@@ -9,6 +8,25 @@ import gallery4 from "../../../../assets/images/cards/example-one/image4.jpeg";
 import gallery5 from "../../../../assets/images/cards/example-one/image5.jpeg";
 import gallery6 from "../../../../assets/images/cards/example-one/image6.jpeg";
 import gallery7 from "../../../../assets/images/cards/example-one/image7.jpeg";
+
+function getCoords(elem: Element) { // crossbrowser version
+    var box = elem.getBoundingClientRect();
+
+    var body = document.body;
+    var docEl = document.documentElement;
+
+    var scrollTop = window.pageYOffset || docEl.scrollTop || body.scrollTop;
+    var scrollLeft = window.pageXOffset || docEl.scrollLeft || body.scrollLeft;
+
+    var clientTop = docEl.clientTop || body.clientTop || 0;
+    var clientLeft = docEl.clientLeft || body.clientLeft || 0;
+
+    var top = box.top + scrollTop - clientTop;
+    var left = box.left + scrollLeft - clientLeft;
+
+    return { top: Math.round(top), left: Math.round(left) };
+}
+
 const ExampleOne = () => {
     const gallery = [
         {

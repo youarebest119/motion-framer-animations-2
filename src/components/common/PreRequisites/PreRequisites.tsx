@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 interface propTypes {
     packages?: {
-        name: ("framer-motion" | "sass" | "react-router-dom" | "bootstrap" | "react-bootstrap"),
+        name: ("framer-motion" | "sass" | "react-router-dom" | "bootstrap" | "react-bootstrap" | "react-hot-toast" | "lottie-react"),
         link?: string,
     }[],
 }
@@ -25,7 +25,7 @@ const PreRequisites = (props: propTypes) => {
                                 props.packages.length > 0 ?
                                 props.packages.map(item => {
                                     return (
-                                        <li>
+                                        <li key={item.name}>
                                             <Link
                                                 onClick={() => ref.current && ref.current.click()}
                                                 to={item.link || ""}

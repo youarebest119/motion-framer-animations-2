@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Card.scss";
 import { TopRightArrow } from "../../../assets/icons/icons";
 import ImageClickable from "../ImageClickable/ImageClickable";
@@ -12,13 +12,18 @@ interface propTypes {
 }
 
 const Card = (props: propTypes) => {
+    const navigate = useNavigate();
     return (
         <>
             <div className={`custom_card ${props.disabled ? "disable" : ""}`}>
-                <div className="custom_card_img">
+                <div onClick={() => navigate(props.to || "")} className="custom_card_img">
                     {
                         props.preview ?
-                            <ImageClickable
+                            // <ImageClickable
+                            //     src={props.preview}
+                            //     alt={props.title}
+                            // />
+                            <img
                                 src={props.preview}
                                 alt={props.title}
                             />

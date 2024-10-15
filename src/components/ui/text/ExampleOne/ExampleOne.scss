@@ -6,6 +6,15 @@
         margin-inline: auto;
         width: fit-content;
         text-transform: uppercase;
+
+        @media (max-width: 1479px) {
+            font-size: 10rem;
+        }
+
+        @media (max-width: 1199px) {
+            font-size: 6rem;
+            font-weight: 700;
+        }
     }
 
     .animate {

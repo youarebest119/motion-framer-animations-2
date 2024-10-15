@@ -40,7 +40,7 @@ const WordByWord = (props: propTypes) => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start end", "start start"],
+        offset: ["start end", document.body.clientWidth > 767 ? "start start" : "center start"],
     });
     return (
         <>
@@ -74,7 +74,7 @@ const LetterByLetter = (props: propTypes) => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: ["start end", "start start"],
+        offset: ["start end", document.body.clientWidth > 767 ? "start start" : "center start"],
     });
     return (
         <>

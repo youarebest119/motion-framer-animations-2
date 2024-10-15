@@ -1,10 +1,15 @@
-import { useScroll, m, useSpring, useTransform } from "framer-motion";
+import { useScroll, m, useSpring, useTransform, useMotionValue } from "framer-motion";
 import { DigitalIcon, GiftIcon, HouseIcon, PlaneIcon } from "../../../../assets/icons/icons";
 import "./ExampleTwo.scss";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import DummyText from "../../../common/DummyText/DummyText";
 
 const ExampleTwo = () => {
+    // const lastSlide = 
+    // {
+    //     start: 0,
+    //         end: 0,
+    // }
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -40,12 +45,29 @@ const ExampleTwo = () => {
                 <DummyText />
                 <section ref={ref} className={"section"}>
                     <div className={"in"}>
-                        <m.h2 style={{ x: "-50%", y: useTransform(springScrollYProgress, [0, 0.2], ["-30%", "-50%"]) }} >Safe and convenient</m.h2>
+                        {/* <m.h2 
+                        style={{ x: "-50%", y: useTransform(springScrollYProgress, [lastSlide.start, lastSlide.end], ["-30%", "-50lastSlide%"]) }} 
+                        >Safe and convenient</m.h2> */}
+                        {/* <m.h2
+                            style={{
+                                opacity: useTransform(springScrollYProgress, [lastSlide.start, lastSlide.end], [0, 1]),
+                            }}
+                        >
+                            Safe and convenient
+                        </m.h2> */}
                         <ul>
                             {
-                                data.map((item, index) => {
+                                data.map((item, index, array) => {
+                                    // if (index === data.length - 1) {
+                                    // lastSlide.start = (index * 0.2);
+                                    // lastSlide.end = (((index + 1) * 0.2) + 0.1);
+                                    // setLastSlide({
+                                    //     start: (index * 0.2),
+                                    //     end: (((index + 1) * 0.2) + 0.1),
+                                    // })
+                                    // }
                                     return (
-                                        <li>
+                                        <li key={item.txt + index}>
                                             <m.div
                                                 style={{
                                                     y: useTransform(springScrollYProgress, [(index * 0.2), ((index + 1) * 0.2) + 0.1], [0, -window.innerHeight]),
@@ -56,6 +78,16 @@ const ExampleTwo = () => {
                                                 {item.icon}
                                                 <p>{item.txt}</p>
                                             </m.div>
+                                            {
+                                                index === array.length - 1 &&
+                                                <m.h2
+                                                    style={{
+                                                        opacity: useTransform(springScrollYProgress, [(index * 0.2) + 0.05, ((index + 1) * 0.2) + 0.1], [0, 1])
+                                                    }}
+                                                >
+                                                    Safe and convenient
+                                                </m.h2>
+                                            }
                                         </li>
                                     )
                                 })

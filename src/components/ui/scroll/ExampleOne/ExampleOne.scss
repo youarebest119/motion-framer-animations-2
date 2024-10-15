@@ -1,0 +1,33 @@
+#scroll_example_one {
+    height: 100dvh;
+    overflow: auto;
+    -webkit-scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory;
+    scroll-snap-type: y mandatory;
+
+    >* {
+        scroll-snap-align: start;
+        height: 100dvh;
+    }
+
+    .section_image {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 600px;
+            height: 400px;
+            object-fit: cover;
+        }
+    }
+
+    .custom_image {
+        overflow: hidden;
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
